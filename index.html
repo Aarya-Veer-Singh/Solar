@@ -9,80 +9,77 @@
                 justify-content: center;
                 background-color: black;
                 overflow: hidden;
-            }
-            .container {
+                }
+        .container {
                 font-size: 10px;
                 width: 40em;
                 height: 40em;
                 position: relative;
             }
-            .sun {
+        .sun {
                 position: absolute;
                 top: 15em;
                 left: 15em;
-                border-radius: 50%;
-                box-shadow: 0 0 100px rgb(255, 255, 255);
-                height: 10em;
                 width: 10em;
+                height: 10em;
                 background-color: yellow;
-            }
-            .earth,.moon {
-                position: absolute;
-                border-style: solid;
-                border-color: white transparent transparent;
-                border-width: 0.1em 0.1em 0 0;
                 border-radius: 50%;
+                box-shadow: 0 0 3em white;
             }
-            .earth {
-                top: 5em;
-                left: 5em;
-                width: 30em;
-                height: 30em;
-                animation: orbit 36.5s linear infinite;
+        .earth,.moon {
+            position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 0.1em 0.1em 0 0;
+            border-radius: 50%;
+        }
+        .earth {
+            top: 5em;
+            left: 5em;
+            width: 30em;
+            height: 30em; 
+            animation: orbit 36.5s linear infinite;   
+        }
+        .moon {
+            top: 0;
+            right: 0;
+            width: 8em;
+            height: 8em; 
+            animation: orbit 2.7s linear infinite;
+        }
+        .earth::before,
+        .moon::before {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+        .earth::before {
+            top: 2.8em;
+            right: 2.8em;
+            width: 3em;
+            height: 3em;
+            background-color: rgb(55, 123, 248);    
+        }
+        .moon::before {
+            top: 0.8em;
+            right: 0.2em;
+            width: 1.2em;
+            height: 1.2em;
+            background-color: silver;
+        }
+        @keyframes orbit {
+            to {
+                transform: rotate(360deg);
             }
-            .moon {
-                top: 0;
-                left: 0;
-                width: 8em;
-                height: 8em;
-                animation: orbit 2.7s linear infinite;
-            }
-            .earth::before,.moon::before {
-                content: '';
-                position: absolute;
-                border-radius: 50%;
-            }
-            .earth::before {
-                top: 2.8em;
-                right: 2.8em;
-                width: 3em;
-                height: 3em;
-                background-color: rgb(55, 123, 248);
-            }
-            .moon::before {
-                top: 0.8em;
-                right: 0.2em;
-                width: 1.2em;
-                height: 1.2em;
-                background-color: silver;
-            }
-            @keyframes orbit {
-                to {
-                    transform: rotate(360deg);
-                }
-            }
-
-        </style>
-        <title>
-            Solar Sytem
-        </title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="sun"></div>
-            <div class="earth">
-                <div class="moon"></div>
-            </div>
+        }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sun"></div>
+        <div class="earth">
+          <div class="moon"></div>
         </div>
-    </body>
+      </div>
+</body>
 </html>
